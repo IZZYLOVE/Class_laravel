@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/pizzas', function () {
+    // return 'pizzas';
+    // return ['henry','frank' ];
+    return view('pizzas');
+});
+
+Route::get('/pizzastype', function () {
+    return view('pizzastype', ['type'=> 'hawaiian']);
+});
+
+Route::get('/pizzasdetails', function () {
+    $details = ['type'=> 'hawaiian', 'base'=>'cheesy crust', 'price'=> 10];
+    return view('pizzasdetails', $details );
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
